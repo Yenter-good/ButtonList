@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10FB8FF6-4D0E-4927-86F8-EEC64D54D38D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ButtonList</RootNamespace>
+    <AssemblyName>ButtonList</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Test1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Test1.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlData.cs" />
+    <Compile Include="ControlManager.cs" />
+    <Compile Include="Helper\AESHelper.cs" />
+    <Compile Include="Helper\EnumHelper.cs" />
+    <Compile Include="Helper\FloatHelper.cs" />
+    <Compile Include="Helper\GrayHelper.cs" />
+    <Compile Include="IControl.cs" />
+    <Compile Include="LightDataEntity.cs" />
+    <Compile Include="LightDataFileEntity.cs" />
+    <Compile Include="Lights\FormLightSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lights\FormLightSetting.Designer.cs">
+      <DependentUpon>FormLightSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lights\FormSelectIcon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lights\FormSelectIcon.Designer.cs">
+      <DependentUpon>FormSelectIcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lights\InternalLightData.cs" />
+    <Compile Include="LightStateChangedArgs.cs" />
+    <Compile Include="Lights\UCCanControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lights\UCCanControl.Designer.cs">
+      <DependentUpon>UCCanControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lights\UCLightItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Lights\UCLightItem.Designer.cs">
+      <DependentUpon>UCLightItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lights\UCLightList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Lights\UCLightList.Designer.cs">
+      <DependentUpon>UCLightList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lights\UCSerialControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lights\UCSerialControl.Designer.cs">
+      <DependentUpon>UCSerialControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helper\IconHelper.cs" />
+    <Compile Include="TableData.cs" />
+    <Compile Include="Tables\FormTableSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\FormTableSetting.Designer.cs">
+      <DependentUpon>FormTableSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\IFactory.cs" />
+    <Compile Include="Tables\Times10Factory.cs" />
+    <Compile Include="Tables\Times50Factory.cs" />
+    <Compile Include="Tables\UCTableCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tables\UCTableCell.Designer.cs">
+      <DependentUpon>UCTableCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\UCTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tables\UCTable.Designer.cs">
+      <DependentUpon>UCTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\UCTableColumn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tables\UCTableColumn.Designer.cs">
+      <DependentUpon>UCTableColumn.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Lights\FormLightSetting.resx">
+      <DependentUpon>FormLightSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lights\FormSelectIcon.resx">
+      <DependentUpon>FormSelectIcon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lights\UCCanControl.resx">
+      <DependentUpon>UCCanControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lights\UCLightItem.resx">
+      <DependentUpon>UCLightItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lights\UCLightList.resx">
+      <DependentUpon>UCLightList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lights\UCSerialControl.resx">
+      <DependentUpon>UCSerialControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Tables\FormTableSetting.resx">
+      <DependentUpon>FormTableSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\UCTableCell.resx">
+      <DependentUpon>UCTableCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\UCTable.resx">
+      <DependentUpon>UCTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\UCTableColumn.resx">
+      <DependentUpon>UCTableColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
